@@ -6,8 +6,14 @@ PhoneBook
 * 主要用于微信分享时，下载app时使用;
 * Android可以一键下载并自动安装，可配置默认显示文字、下载、下载中、安装中等不同状态的提示文字;
 * iOS访问会打开App Store;
+* 安装成功后分享页面中会通过视窗切换监测安装状态，改变提示方案；
+* 开发阶段调试代码在url中添加?debug，会在按钮下方显示调试信息；
+* 如果只需要下载按钮，直接下载app，在参数中添加downloadType: 'onlyDownload'，只提供下载不监测安装状态；
 
 ```  
+<!-- 需要绑定的dom -->
+<a href="javascript:;" id="shareDownloadButton">我也要分析通话记录</a>
+
 //参数配置
 var shareDownloadOption = {
     
