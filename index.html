@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="apple-mobile-web-app-capable" content="no"/>
+    <meta name="format-detection" content="telephone=no">
+	<title>分享页一键下载app</title>
+</head>
+<body>
+	
+<a href="javascript:;" id="shareDownloadButton">我也要分析通话记录</a>
+
+<!-- zepto || jquery -->
+<script src="js/zepto.min.js"></script>
+<script src="js/PhoneBook.js"></script>
+<script>
+
+	//分享页下载app
+	var shareDownloadOption = {
+	    //绑定DOM元素的ID
+	    id: '#shareDownloadButton',
+	    //应用名
+	    appName: '微信电话本',
+	    //android必填，应用包名
+	    packageName: 'com.tencent.pb',
+	    //android应用的MD5值
+	    appMD5: '197d998a54c47bb092a40355f86f9a4c',
+	    //安卓应用下载地址
+	    downloadAndroidUrl: 'http://dldir1.qq.com/qqcontacts/100015_pb_3.0.0.2250_android.apk',
+	    //打开安卓应用的地址
+	    openAndroidAppUrl: 'sharecalllog://dianhua.qq.com/?type=analysismine',
+	    //iOS必填，xxxx:// 开头的一个scheme 例：phonebook://
+	    packageUrl: 'phonebook://com.tencent.pb',
+	    //iOS应用下载地址
+	    downloadIosUrl: 'http://dianhua.qq.com/cgi-bin/cloudgrptemplate?t=dianhuaben_ip_download&channel=100015',
+	    //打开iOS应用的地址
+	    openIosAppUrl: 'sharecalllog://dianhua.qq.com/?type=analysismine',
+	    //defaultInnerHtml 默认显示文字
+	    defaultInnerHtml: '我也要分析通话记录',
+	    //downloadInnerHtml 未下载文字提示
+	    downloadInnerHtml: '下载微信电话本进行分析',
+	    //cancelDownloadInnerHtml 下载中文字提示,点击可取消下载
+	    cancelDownloadInnerHtml: '正在下载微信电话本...',
+	    //installAppInnerHtml 下载完成提示文字
+	    installAppInnerHtml: '安装微信电话本',
+	    //按钮下载类型
+	    downloadType: 'onlyDownload'
+	}
+	PhoneBook.shareDownload(shareDownloadOption);
+
+
+	//分享到微信
+	var shareToWechatOption = {
+	    //分享的图片链接地址
+	    shareImg: "http://dianhua.qq.com/zh_CN/htmledition/dianhuaben/img/mod-share-icon-st.png",
+	    //标题
+	    shareTitle: "打电话就用微信电话本，高清免费通话！",
+	    //描述
+	    shareDesc: "微信电话本，高清免费通话，专属语音信箱。",
+	    //URL；
+	    shareUrl: location.href
+	}
+	PhoneBook.shareToWechat(shareToWechatOption);
+
+
+</script>
+
+
+
+
+</body>
+</html>
