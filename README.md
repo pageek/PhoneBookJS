@@ -1,4 +1,4 @@
-PhoneBook
+PhoneBook.js
 =========
 
 ####分享页一键下载app插件
